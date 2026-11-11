@@ -7,9 +7,14 @@ import com.back.domain.wiseSaying.controller.WiseSayingController;
 import java.util.Scanner;
 
 public class App {
-    Scanner sc = AppContext.sc;
+    private final Scanner sc;
 
-    void run() {
+    public App(Scanner sc) {
+        AppContext.renew(sc);
+        this.sc = AppContext.sc;
+    }
+
+    public void run() {
         System.out.println("== 명언 앱 ==");
 
         SystemController systemController = AppContext.systemController;

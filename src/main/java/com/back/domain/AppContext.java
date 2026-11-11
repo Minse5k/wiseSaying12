@@ -8,9 +8,17 @@ import com.back.domain.wiseSaying.service.WiseSayingService;
 import java.util.Scanner;
 
 public class AppContext {
-    public static final Scanner sc = new Scanner(System.in);
-    public static final WiseSayingRepository wiseSayingRepository = new WiseSayingRepository();
-    public static final WiseSayingService wiseSayingService = new WiseSayingService();
-    public static final WiseSayingController wiseSayingController = new WiseSayingController();
-    public static final SystemController systemController = new SystemController();
+    public static Scanner sc;
+    public static WiseSayingRepository wiseSayingRepository;
+    public static WiseSayingService wiseSayingService;
+    public static WiseSayingController wiseSayingController;
+    public static SystemController systemController;
+
+    public static void renew(Scanner scanner) {
+        sc = scanner;
+        wiseSayingRepository = new WiseSayingRepository();
+        wiseSayingService = new WiseSayingService();
+        wiseSayingController = new WiseSayingController();
+        systemController = new SystemController();
+    }
 }
